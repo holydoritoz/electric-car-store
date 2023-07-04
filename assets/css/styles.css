@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+/* Paleta de colores*/
+
+:root {
+  --font-color: rgb(85, 83, 83);
+}
+
+/* Contenedor grid */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "search"
+    "main"
+    "footer";
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Header Section */
+
+header {
+  grid-area: header;
+  background-color: #00579c;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+
+}
+
+header i {
+  font-size: 25px;
+}
+
+.title {
+  display: flex;
+  gap: 5px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Search Section */
+
+
+section {
+  grid-area: search;
+  background-color: #E2E2E2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  color: var(--font-color);
+}
+
+.filtro {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  background-color: white;
+  width: 20rem;
+  height: 2rem;
+  margin-top: 5px;
+}
+
+/* Main Section */
+
+main {
+  grid-area: main;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card {
+  border: 1px solid rgb(199, 199, 199);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 365px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.card img {
+  width: 300px;
+}
+
+.card p {
+  font-size: small;
+  color: var(--font-color);
+  margin-top: 5px;
+}
+
+.card .btn {
+  background-color: #00579c;
+  width: 60px;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-size: small;
+}
+
+/* Pagination Section */
+
+.border {
+  border: 1px solid rgb(221, 221, 221);
+}
+
+.pagination {
+  display: flex;
+  margin-top: 15px;
+  color: #00579c;
+  font-size: small;
+  width: 120px;
+}
+
+.pagination div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 20px;
+}
+
+.border i {
+  font-size: 6px;
+}
+
+/* Footer Section */
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  background-color: #012f6b;
+  padding: 20px;
+  color: white;
+}
+
+footer i {
+  font-size: 20px;
+}
