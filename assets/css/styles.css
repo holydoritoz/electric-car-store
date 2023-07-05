@@ -18,15 +18,17 @@
 
 .grid-container {
   display: grid;
+  width: 100vw;
+  height: 100vh;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: 1fr 1fr 8fr 1fr 1fr;
   grid-template-areas:
     "header"
     "search"
     "main"
+    "pagination"
     "footer";
-  width: 100vw;
-  height: 100vh;
+
 }
 
 /* Header Section */
@@ -47,12 +49,16 @@ header i {
 
 .title {
   display: flex;
-  gap: 5px;
+  gap: 20px;
 }
 
 nav {
   display: flex;
   align-items: center;
+}
+
+.nav-bar {
+  display: none;
 }
 
 /* Search Section */
@@ -68,57 +74,72 @@ section {
   color: var(--font-color);
 }
 
-.filtro {
+.filter-title {
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
+  align-items: center;
+  gap: 5px;
+}
+
+.filter-title i {
+  font-size: 12px;
+}
+
+select {
   align-items: center;
   background-color: white;
   width: 20rem;
   height: 2rem;
   margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: medium;
 }
 
 /* Main Section */
 
 main {
   grid-area: main;
-  padding: 10px;
+}
+
+.card-container {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: scroll;
+  gap: 20px;
+  padding: 20px;
 }
 
 .card {
   border: 1px solid rgb(199, 199, 199);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  height: 365px;
+  height: 400px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .card img {
   width: 300px;
+  padding: 10px;
 }
 
 .card p {
-  font-size: small;
+  font-size: 1rem;
+  font-weight: bold;
   color: var(--font-color);
   margin-top: 5px;
 }
 
 .card .btn {
   background-color: #00579c;
-  width: 60px;
-  height: 30px;
-  border-radius: 5px;
-  margin-top: 5px;
+  width: 300px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .card a {
@@ -128,26 +149,27 @@ main {
   font-size: small;
 }
 
+
+
 /* Pagination Section */
 
-.border {
-  border: 1px solid rgb(221, 221, 221);
-}
-
 .pagination {
+  grid-area: pagination;
   display: flex;
-  margin-top: 15px;
-  color: #00579c;
-  font-size: small;
-  width: 120px;
+  justify-content: center;
+  align-items: center;
+  background-color: #E2E2E2;
+  color: var(--font-color);
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .pagination div {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
 
 .border i {
@@ -160,10 +182,83 @@ footer {
   grid-area: footer;
   text-align: center;
   background-color: #012f6b;
-  padding: 20px;
-  color: white;
+  padding: 15px;
+  color: rgb(206, 206, 206);
+
 }
 
-footer i {
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
   font-size: 20px;
 }
+
+/* BREAKPOINTS */
+/* Versión Tablet */
+
+@media (min-width: 576px) {
+  .grid-container {
+    grid-template-columns: 1fr 11fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "header header"
+      "search main"
+      "search pagination"
+      "footer footer";
+  }
+
+  section {
+    width: 12rem;
+  }
+
+  select {
+    width: 10rem;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    align-items: center;
+  }
+
+  .burguer {
+    display: none;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  .nav-bar {
+    display: flex;
+    margin-right: 30px;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+  }
+
+  li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    color: white;
+    text-decoration: none;
+  }
+
+}
+
+
+/* Versión Escritorio */
