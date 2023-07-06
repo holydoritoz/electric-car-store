@@ -1,5 +1,5 @@
 ﻿# Mobile First- Layout
-👨‍💻 DEMO LIVE https://holydoritoz.github.io/electric-car-store/
+🟢DEMO LIVE https://holydoritoz.github.io/electric-car-store/
 
 ![image](https://github.com/holydoritoz/electric-car-store/assets/54608904/a1c9884d-f792-4563-9627-c38629cf6647)
 
