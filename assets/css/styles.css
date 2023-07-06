@@ -35,12 +35,11 @@
 
 header {
   grid-area: header;
-  background-color: #00579c;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
+  background-color: #00579c;
+  padding: 20px;
   color: white;
-
 }
 
 header i {
@@ -64,7 +63,6 @@ header i {
 }
 
 /* Search Section */
-
 
 section {
   grid-area: search;
@@ -123,7 +121,6 @@ main {
 }
 
 .card img {
-  /* width: 300px; */
   padding: 5px;
   width: 100%;
   height: 320px;
@@ -154,8 +151,6 @@ main {
   font-size: 1rem;
 }
 
-
-
 /* Pagination Section */
 
 .pagination {
@@ -169,12 +164,28 @@ main {
   font-weight: bold;
 }
 
-.pagination div {
+.pagination a {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  color: black;
   width: 40px;
   height: 40px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.pagination .left-btn {
+  border-left: 1px solid black;
+  background-color: rgb(54, 54, 54);
+  color: white;
+}
+
+.pagination .right-btn {
+  background-color: rgb(54, 54, 54);
+  color: white;
 }
 
 .border i {
@@ -206,10 +217,9 @@ footer {
 @media screen and (min-width: 576px) {
   .grid-container {
     grid-template-columns: 1fr 11fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(3, auto);
     grid-template-areas:
       "header search"
-      "header main"
       "header main"
       "footer pagination";
   }
@@ -229,7 +239,8 @@ footer {
   header {
     flex-direction: column;
     justify-content: flex-start;
-    width: 13rem;
+    align-items: center;
+    width: 11rem;
   }
 
   .nav-bar {
@@ -242,8 +253,6 @@ footer {
     height: 40px;
     justify-content: space-between;
   }
-
-
 
   ul li {
     list-style: none;
@@ -262,6 +271,6 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #00579c;
+    background-color: #3b3b3b;
   }
 }
